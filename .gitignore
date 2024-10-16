@@ -169,3 +169,4 @@ alignment/*
 expectation/*
 classification/*
 introduction/example_data/Partitura_tutorial_old.ipynb
+introduction/dev_spectrogram.ipynb

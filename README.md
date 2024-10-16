@@ -9,7 +9,7 @@ For more information, see the [Moodle page of the course](https://moodle.jku.at/
 To create setup the environment, run the following commands in the terminal:
 
 ```bash
-git clone https://github.com/MusicalInformatics/miws24.git
+git clone --recurse-submodules https://github.com/MusicalInformatics/miws24.git
 cd miws24
 conda env create -f environment.yml
 ```
