@@ -6,6 +6,8 @@ import numpy as np
 from typing import Any, Tuple, List
 
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
+from matplotlib.axes._axes import Axes
 from scipy.interpolate import interp1d
 
 from partitura.utils.music import frequency_to_midi_pitch, midi_pitch_to_frequency
@@ -33,15 +35,18 @@ class VerticalLineOnClickPlot(object):
         figsize: Tuple[int, int] = (8, 6),
         xlabel: str = "x",
         ylabel: str = "y",
+        fig: Figure = None,
+        ax: Axes = None,
     ) -> None:
         self.x = x
         self.y = y
-        self.fig, self.ax = plt.subplots(figsize=figsize)
-        self.ax.plot(
-            x,
-            y,
-            color="navy"
-        )
+
+        if fig is None or ax is None:
+            self.fig, self.ax = plt.subplots(figsize=figsize)
+        else:
+            self.fig = fig
+            self.ax = ax
+        self.ax.plot(x, y, color="navy")
         self.lines: List[plt.Line2D] = []
         self.x_values: List[float] = []
         self.interp_fun = interp1d(
@@ -190,13 +195,23 @@ class InteractiveToneAnalyzer(VerticalLineOnClickPlot):
 
         spectrogram_dist = spectrogram.sum(axis=1)
         spectrogram_dist /= max(spectrogram_dist.sum(), 1e-10)
+
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=figsize,)
         super().__init__(
             x=freqs,
             y=spectrogram_dist,
             figsize=figsize,
+            xlabel="Frequency (Hz)",
+            ylabel="Magnitude",
+            fig=fig,
+            ax=axes[0],
         )
+        self.signal_ax = axes[1]
+        self.signal = signal
         self.spectrogram = spectrogram
         self.audio_widget = None
+        self.synth_signal = None
+        self.time_axis = np.linspace(0, 1, len(signal))
 
         self.fundamental_freq_raw = freqs[spectrogram_dist.argmax()]
         self.fundamental_freq = MIDI_PITCH_FREQS[
@@ -210,7 +225,7 @@ class InteractiveToneAnalyzer(VerticalLineOnClickPlot):
             linestyle="--",
             linewidth=3,
         )
-        self.update_plot()
+        self.update_plot(display_audio=False)
 
     def harmonics_dist(self, freq: int) -> Tuple[np.ndarray, np.ndarray]:
         overtones = np.array(self.x_values) / self.fundamental_freq
@@ -235,13 +250,21 @@ class InteractiveToneAnalyzer(VerticalLineOnClickPlot):
             samplerate=SAMPLE_RATE,
             weights=weights,
         )
+        self.synth_signal = audio_signal
         self.audio_widget = ipd.Audio(
             data=audio_signal,
             rate=SAMPLE_RATE,
             normalize=False,
             element_id="audio_display",
         )
+        self.signal_ax.cla()
+        self.signal_ax.plot(self.signal[1000:2000] / abs(self.signal).max(), color="firebrick", label="Piano",)
+        self.signal_ax.plot(audio_signal[1000:2000] / abs(audio_signal).max(), color="black", label="synthesized")
 
-    def update_plot(self) -> None:
+    def update_plot(self, display_audio: bool = True) -> None:
         plt.draw()
         self.synthesize()
+        if display_audio:
+            ipd.display(self.audio_widget)
+
+
