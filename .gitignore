@@ -165,8 +165,14 @@ cython_debug/
 .vscode
 
 # Ignore folders and files for future classes
-alignment/*
+alignment/dev/*
+alignment/Baseline/*
+alignment/BaselineTraining/*
+alignment/parangonada_files
 expectation/*
 classification/*
 introduction/example_data/Partitura_tutorial_old.ipynb
 introduction/dev_spectrogram.ipynb
+alignment/parangonada_files.zip
+introduction/CatPerformance.mid
+introduction/example.mid
