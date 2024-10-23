@@ -169,6 +169,8 @@ alignment/dev/*
 alignment/Baseline/*
 alignment/BaselineTraining/*
 alignment/parangonada_files
+alignment/Dataset*
+alignment/BaselineSubmission24W
 expectation/*
 classification/*
 introduction/example_data/Partitura_tutorial_old.ipynb
@@ -176,3 +178,4 @@ introduction/dev_spectrogram.ipynb
 alignment/parangonada_files.zip
 introduction/CatPerformance.mid
 introduction/example.mid
+alignment/Baseline_Alignment_P.py
