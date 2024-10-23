@@ -36,13 +36,16 @@ We will grade each task on 4(+1) main aspects:
     * An evaluation was conducted
     * Correct use of metrics/statistics
     * There is no data leak (correct split of the data), if the models are trained
+
 3. **Presentation style** (structure, clarity): 40% (20 points)
     * Ideally, the report should not be only text or code, but it also should include some figures/images illustrating the methods. Imagine that you are writing a blog post for **non-experts**, and try to explain the methods in a simple and clear way, and do not be afraid to use some math! (You can use LaTeX/Markdown on Jupyter Notebooks)
     * Is the report reasonably structured into sections? (e.g., Introduction, Methods, Datasets, etc.)
     * Are the figures illustrating the results?
     * Are the citations correctly formatted,…
+
 4. **Critical reflection**: 10% (5 points)
     * What are the limitations of the approach, what did you learn?
+
 5. **(Bonus) Creativity**: (up to 30%/ up to 15 points)
     * You can get extra points for creative solutions! Don’t be afraid to think outside the box, even if the results do not outperform other methods!
 
@@ -50,22 +53,26 @@ The report for each task must include the following points (you can structure th
 
 1. **Introduction**:
     * What the specific task is about, why is it an interesting problem (think of musical and technical issues)
+
 2. **Description of the method/methods used**:
-    * Describe why did you select your approach (how does the method address the particular musical problem),
+    * Describe why did you select your approach (how does the method address the particular musical problem).
     * A brief description of the method(s), what are the parameters of the method (and how do they relate to the problem).
     * You don't need to include a full technical description of the methods!
+
 3. **Evaluation of the method(s)**:
     * How do you evaluate the performance of the model? (i.e., which metrics do you use to assess the performance of the model). Include both your own evaluation using the training set, as well as the performance of the model on the leaderboard!
     * The loss function used to train a model is not necessarily the best metric to compare models (e.g., a probabilistic classifier is trained to minimize the cross entropy, but the metric used to compare the models could be the accuracy or F1-score).
     * Which datasets are you using and what is the information contained in them. Which features do you use?
     * How was the method trained? (including strategies for hyperparameter selection).
+
 4. **Discussion of the results and your own conclusions**:
     * Discuss what worked or did not work, which characteristics of the model lead to better performance.
+
     * Do not be afraid to conduct ablation studies to see how different parts of the model contribute to the overall performance!
 
 ### Challenge
 
-Each team should participate at **least once** in the challenge to get a grade in the reports. The deadline for submissions is **January 21st, 2024 23:59**! The winners of the challenge will be announced during the final concert/presentations on **January 22nd**.
+Each team should participate at **least once** in the challenge to get a grade in the reports. The deadline for submissions is **January 21st, 2025 23:59**! The winners of the challenge will be announced during the final concert/presentations on **January 22nd**.
 
 For this challenge, you will have to align a performance with its score, in a note-wise fashion and export your results as a compressed Numpy file. For convenience, we will provide both a training dataset consisting of performance, score and ground truth alignments in the CSV format used for [Parangonada](https://sildater.github.io/parangonada/), an interactive interface to compare and correct alignments.
 

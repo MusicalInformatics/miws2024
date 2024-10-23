@@ -2,18 +2,14 @@
 # -*- coding: utf-8 -*-
 """
 Baseline submission for the music alignment challenge 
-for Musical Informatics WS23
+for Musical Informatics WS24
 """
 import warnings
 
 import partitura as pt
 import os
 
-# Uncomment this line if the kernel keeps crashing
-# See https://stackoverflow.com/a/53014308
-# os.environ['KMP_DUPLICATE_LIB_OK']='True'
-
-from typing import Union, List
+from typing import Tuple, Union, List
 
 import numpy as np
 from fastdtw import fastdtw
@@ -38,7 +34,7 @@ warnings.filterwarnings(
 def compute_pianoroll_score(
     score_note_array: np.ndarray,
     time_div: Union[str, int] = "auto",
-) -> (np.ndarray, np.ndarray):
+) -> Tuple[np.ndarray, np.ndarray]:
     """
     Compute Piano Roll for the Score
 
@@ -74,7 +70,7 @@ def compute_pianoroll_score(
 def compute_pianoroll_performance(
     performance_note_array: np.ndarray,
     time_div: Union[str, int] = "auto",
-) -> (np.ndarray, np.ndarray):
+) -> Tuple[np.ndarray, np.ndarray]:
     """
     Compute Piano Roll for the Score
 
@@ -116,7 +112,7 @@ def fast_dynamic_time_warping(
     X: np.ndarray,
     Y: np.ndarray,
     metric: str = "euclidean",
-) -> (np.ndarray, float):
+) -> Tuple[np.ndarray, float]:
     """
      Fast Dynamic Time Warping
 
@@ -295,6 +291,8 @@ if __name__ == "__main__":
     evaluation = []
     piece_names = []
     for i, (piece_name, pdata) in enumerate(dataset.items()):
+
+        print(f"Compute alignment for {piece_name}")
         piece_names.append(piece_name)
 
         performance_note_array, score_note_array, gt_alignment = pdata
