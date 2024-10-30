@@ -171,7 +171,6 @@ alignment/BaselineTraining/*
 alignment/parangonada_files
 alignment/Dataset*
 alignment/BaselineSubmission24W
-expectation/*
 classification/*
 introduction/example_data/Partitura_tutorial_old.ipynb
 introduction/dev_spectrogram.ipynb
@@ -179,3 +178,10 @@ alignment/parangonada_files.zip
 introduction/CatPerformance.mid
 introduction/example.mid
 alignment/Baseline_Alignment_P.py
+expectation/data/MNIST/*
+expectation/train_loss.txt
+expectation/valid_loss.txt
+expectation/generation_with_RNN_for_musical_expectation.ipynb
+expectation/rnn_annotated.py
+expectation/simple_nn.pth
+expectation/best_model.pth
