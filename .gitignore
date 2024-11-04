@@ -185,3 +185,6 @@ expectation/generation_with_RNN_for_musical_expectation.ipynb
 expectation/rnn_annotated.py
 expectation/simple_nn.pth
 expectation/best_model.pth
+expectation/img/current_env.txt
+expectation/*.pth
+classifiation/cached
