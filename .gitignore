@@ -171,7 +171,6 @@ alignment/BaselineTraining/*
 alignment/parangonada_files
 alignment/Dataset*
 alignment/BaselineSubmission24W
-classification/*
 introduction/example_data/Partitura_tutorial_old.ipynb
 introduction/dev_spectrogram.ipynb
 alignment/parangonada_files.zip
@@ -188,3 +187,11 @@ expectation/best_model.pth
 expectation/img/current_env.txt
 expectation/*.pth
 classifiation/cached
+old_classification/
+classification/pickled_scores_difficulty_estimation
+classification/piano_rolls_numpy
+classification/scores_composer_identification
+classification/scores_difficulty_estimation
+classification/*.zip
+classification/*.pth
+
