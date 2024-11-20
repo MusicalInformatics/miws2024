@@ -195,3 +195,9 @@ classification/scores_difficulty_estimation
 classification/*.zip
 classification/*.pth
 
+generation_dl/other/example_orthogonal.py
+generation_dl/other/intro_transformers.ipynb
+generation_dl/rnn_melodic_generation/train_loss.txt
+generation_dl/rnn_melodic_generation/valid_loss.txt
+generation_dl/transformers_drum_generation/*.pt
+generation_dl/wuerfelspiel/figs/wuefelspiel_table_p2.pdf
