@@ -194,5 +194,4 @@ classification/scores_composer_identification
 classification/scores_difficulty_estimation
 classification/*.zip
 classification/*.pth
-generation_dl/
 
