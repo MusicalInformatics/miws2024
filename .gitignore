@@ -202,6 +202,6 @@ generation_dl/rnn_melodic_generation/valid_loss.txt
 generation_dl/transformers_drum_generation/*.pt
 generation_dl/wuerfelspiel/figs/wuefelspiel_table_p2.pdf
 generation_dl/rnn_melodic_generation/best_model.pth
-generation_dl/rnn_melodic_generation/checkpoint-epoch-0.pth
-generation_dl/rnn_melodic_generation/checkpoint-epoch-1.pth
+generation_dl/rnn_melodic_generation/checkpoint-epoch*.pth
 generation_dl/rnn_melodic_generation/rnn_melodic_generation_solutions.ipynb
+generation_dl/transformers_drum_generation/GeneratedDrumBeats*.mid
