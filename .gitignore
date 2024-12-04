@@ -194,6 +194,7 @@ classification/scores_composer_identification
 classification/scores_difficulty_estimation
 classification/*.zip
 classification/*.pth
+classification/pieces_key_estimation
 
 generation_dl/other/example_orthogonal.py
 generation_dl/other/intro_transformers.ipynb
@@ -205,3 +206,18 @@ generation_dl/rnn_melodic_generation/best_model.pth
 generation_dl/rnn_melodic_generation/checkpoint-epoch*.pth
 generation_dl/rnn_melodic_generation/rnn_melodic_generation_solutions.ipynb
 generation_dl/transformers_drum_generation/GeneratedDrumBeats*.mid
+classification/img/abstract_piano.png
+classification/img/vangogh_piano.png
+classification/img/cats_baroque.png
+classification/key_estimation_results.csv
+classification/composer_classification_test_gt.csv
+classification/difficulty_classification_test_gt.numbers
+classification/difficulty_classification_test_gt.csv
+classification/img/bachstreet_boys.png
+classification/piece_difficulty_results.csv
+classification/composer_identification_results_cnn.csv
+classification/composer_identification_results.csv
+generation_EA/flowchart.png
+generation_EA/ea_figs.ipynb
+generation_EA/evolutionary_four_part_writing.musicxml
+classification/Baseline2_ComposerIdentification.py
