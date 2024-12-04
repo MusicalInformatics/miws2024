@@ -51,6 +51,21 @@ def encode_composer(composers: Union[np.ndarray, str, pd.DataFrame]) -> np.ndarr
         return composer_indices
 
 
+def decode_composer(composer_index: Union[np.ndarray, int]) -> np.ndarray:
+
+    if isinstance(composer_index, np.ndarray):
+        return np.array(
+            [CLASSES_COMPOSER[idx] for idx in composer_index],
+            dtype="U256",
+        )
+
+    else:
+        return np.array(
+            [CLASSES_COMPOSER[composer_index]],
+            dtype="U256",
+        )
+
+
 def segment_array(array: np.ndarray, window_length: int) -> np.ndarray:
     """
     Segments a 2D numpy array into non-overlapping windows of a specified length.

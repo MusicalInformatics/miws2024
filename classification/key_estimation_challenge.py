@@ -133,6 +133,7 @@ def load_submission(fn: str) -> dict:
         dtype=str,
         delimiter=",",
         comments="//",
+        skiprows=1,
     )
 
     predictions = dict([(g[0], g[1]) for g in gt])
