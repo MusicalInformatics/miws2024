@@ -214,10 +214,6 @@ if __name__ == "__main__":
 
     train_data, test_data = load_piece_difficulty_dataset(args.datadir)
 
-    import pdb
-
-    pdb.set_trace()
-
     train_scores = []
     train_note_arrays = []
     train_features = []
